@@ -10,7 +10,6 @@
 プログラムの実行はターミナルから行ってください。
 */
 foreach(range(1,100) as $cnt){
-    // var_dump($aaa."回目のハロー！");
     if($cnt % 3 === 0){
         echo "アホ ";
     }else{
