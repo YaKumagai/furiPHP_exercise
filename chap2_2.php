@@ -22,15 +22,13 @@ string(18) "7 は 奇数です"
 
 var_dump("数字を入力して下さい");
 $num = trim(fgets(STDIN));
-$nums = $num%2;
+$nums = $num % 2;
 if($nums === 1){
-    var_dump($num." は、奇数です");
-}elseif($nums === 0){
-    var_dump($num." は、偶数です");
+    var_dump($num . " は、奇数です");
 }else{
-    var_dump($num." は、奇数でも偶数でもありません");
-    var_dump($nums."は、2 の余り");
+    var_dump($num . " は、偶数です");
 }
+
 // docker-compose exec app bash
 // cd furiPHP_exercise
 // php chap2_1.php

@@ -24,30 +24,22 @@ chap4_1.php に chap4_area.php を取り込む。
 $top = 10;
 $bottom = 20;
 $height = 30;
-
 関数の結果を$areaに入れる
 メッセージ関数の呼び出し
-
 $top = 40;
 $bottom = 50;
 $height = 60;
-
 関数の結果を$areaに入れる
 メッセージ関数の呼び出し
 */
-function calcArea_2($tops,$bottoms,$heights){
-    return ($tops + $bottoms) * $heights / 2;
-}
-
 function calcArea($tops,$bottoms,$heights){
     $areas = ($tops + $bottoms) * $heights / 2;
     $msg = <<<EOM
-    
-    台形のサイズ
-    上底 : {$tops}
-    下底 : {$bottoms}
-    高さ : {$heights}
-    面積 : {$areas}\n
+\n台形のサイズ
+上底 : {$tops}
+下底 : {$bottoms}
+高さ : {$heights}
+面積 : {$areas}\n
 EOM;
-    echo $msg;
+    return $msg;
 }

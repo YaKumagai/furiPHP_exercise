@@ -54,7 +54,10 @@ var_dump("3つ目の金額を入力");
 $item3 = trim(fgets(STDIN));
 
 $sum = add($item1,$item2,$item3);
-totalTax($name,$sum);
+$price = totalTax($sum);
+
+$msg = displayMsg($name,$sum,$price);
+echo $msg;
 
 // docker-compose exec app bash
 // cd furiPHP_exercise

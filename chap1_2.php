@@ -9,12 +9,13 @@ var_dump("ハロー！");
 */
 
 var_dump("上底は？");
-$top=trim(fgets(STDIN));
+$top = trim(fgets(STDIN));
 var_dump("下底は？");
-$bottom=trim(fgets(STDIN));
+$bottom = trim(fgets(STDIN));
 var_dump("高さは？");
-$height=trim(fgets(STDIN));
-$area=($top+$bottom)*$height/2;
-var_dump("面積は".$area."です。");
+$height = trim(fgets(STDIN));
+$area = ($top + $bottom) * $height / 2;
+var_dump("面積は" . $area . "です。");
+
 // cd furiPHP_exercise
 // php chap1_2.php

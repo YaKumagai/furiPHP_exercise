@@ -5,18 +5,6 @@ var_dump("ハロー！");
 【以下の条件で作成】
 chap4_3.phpのコードは修正せずに
 以下の実行結果をターミナルで出力できるように作成して下さい。
-var_dump($owners);
-array(3) {[0]=>array(2) 
-    {["name"]=>string(6) "斎藤"
-    ["animal"]=>array(3) {[0]=>string(3) "猫"[1]=>string(3) "猫"[2]=>string(3) "猫"}
-}}
-array(3) {[0]=> 
-    {["name"]=>"斎藤"
-    ["animal"]=>{[0]=>"猫"[1]=>"猫"[2]=>"猫"}
-}}
-var_dump($animal_types);
-echo $animal_types[2][1];
-
 */
 require_once __DIR__ . "/chap4_pet.php";
 $owners = [
@@ -32,14 +20,12 @@ foreach ($owners as $owner) {
 /*
 $dcnt = count($owners);
 $dcnt = $dcnt-1;
-
 foreach(range(0,$dcnt) as $cnt){
 $name[$cnt] = $owners[$cnt]["name"];
 $animal_types[$cnt] = $owners[$cnt][["animal"][0]];
 $count[$cnt] = count($animal_types[$cnt]);
 $animal_types[$cnt] = array_unique($animal_types[$cnt]);
 $animal[$cnt] = implode('、',$animal_types[$cnt]);
-
 $names = $name[$cnt];
 $animals = $animal[$cnt];
 $counts = $count[$cnt];

@@ -24,14 +24,14 @@ $score_1 = trim(fgets(STDIN)); // 数学
 var_dump("国語の点数を入力してください");
 $score_2 = trim(fgets(STDIN)); // 国語
 
-$nums = $num%2;
 if($score_1 >= 80 && $score_2 >= 80){
     var_dump("合格です。");
-}elseif($score_1 >= 80 || $score_2 >= 80){
-    var_dump("追試です。");
-}else{
+}elseif($score_1 < 50 && $score_2 < 50){
     var_dump("不合格です。");
+}else{
+    var_dump("追試です。");
 }
+
 // docker-compose exec app bash
 // cd furiPHP_exercise
 // php chap2_3.php

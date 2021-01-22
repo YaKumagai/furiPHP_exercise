@@ -15,12 +15,9 @@ count関数 を使用し、ペットの数をカウントした結果を入れ�
 function displayMsg($owner){
 
 $name = $owner["name"];
-
-$animal_types = $owner[["animal"][0]];
+$animal_types = $owner["animal"];
+$animal = implode('、',array_unique($animal_types));
 $count = count($animal_types);
-
-$animal_types = array_unique($animal_types);
-$animal = implode('、',$animal_types);
 
 $msg = <<<EOM
 {$name}さんは
@@ -29,29 +26,3 @@ $msg = <<<EOM
 EOM;
     echo $msg;
 }
-
-
-/*
-$owners = [
-    ["name" => "斎藤", "animal" => ["猫", "猫", "猫"]],
-    ["name" => "鈴木", "animal" => ["柴犬"]],
-    ["name" => "藤井", "animal" => ["猫", "チワワ", "うさぎ"]],
-];
-foreach ($owners as $owner) {
-    displayMsg($owner);
-}
-
-
-$orders = [
-    ["name"=>"三浦","cnt"=>6],
-    ["name"=>"高野","cnt"=>8]
-];
-foreach($orders as $order){
-    $price = getPrice($order["cnt"]);
-    createMsg($order["name"],$price);
-}
-
-
-}
-
-*/

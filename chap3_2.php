@@ -9,13 +9,12 @@
 
 プログラムの実行はターミナルから行ってください。
 */
-foreach(range(0,99) as $cnt){
-    $aaa = $cnt+1;
+foreach(range(1,100) as $cnt){
     // var_dump($aaa."回目のハロー！");
-    if($aaa%3 === 0){
+    if($cnt % 3 === 0){
         echo "アホ ";
     }else{
-        echo $aaa." ";
+        echo $cnt . " ";
     }
 }
 

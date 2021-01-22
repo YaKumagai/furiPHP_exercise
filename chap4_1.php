@@ -39,16 +39,14 @@ require_once __DIR__."/chap4_area.php";
 $top = 10;
 $bottom = 20;
 $height = 30;
-calcArea($top,$bottom,$height);
-// echo $area;
-
-
+$msg = calcArea($top,$bottom,$height);
+echo $msg;
 
 $top = 40;
 $bottom = 50;
 $height = 60;
-calcArea($top,$bottom,$height);
-// echo $area;
+$msg = calcArea($top,$bottom,$height);
+echo $msg;
 
 // docker-compose exec app bash
 // cd furiPHP_exercise

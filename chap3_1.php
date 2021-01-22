@@ -10,7 +10,7 @@ var_dump("ハロー！");
 */
 $blood_types = ["A","B","O","AB"];
 foreach($blood_types as $blood_type){
-    var_dump($blood_type."型です。");
+    var_dump($blood_type . "型です。");
 }
 
 // docker-compose exec app bash

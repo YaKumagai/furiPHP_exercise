@@ -10,18 +10,15 @@ var_dump("ハロー！");
 プログラムの実行はターミナルから行ってください。
 
 */
-foreach(range(0,99) as $cnt){
-    $aaa = $cnt+1;
-    if($aaa%3 === 0 && $aaa%5 === 0){
+foreach(range(1,100) as $cnt){
+    if($cnt % 3 === 0 && $cnt % 5 === 0){
         echo "FizzBuzz ";
+    }elseif($cnt % 3 === 0){
+        echo "Fizz ";
+    }elseif($cnt % 5 === 0){
+        echo "Buzz ";
     }else{
-        if($aaa%3 === 0){
-            echo "Fizz ";
-        }elseif($aaa%5 === 0){
-            echo "Buzz ";
-        }else{
-            echo $aaa." ";
-        }
+        echo $cnt . " ";
     }
 }
 
