@@ -19,7 +19,7 @@ $animal_types = $owner["animal"];
 $animal = implode('、', array_unique($animal_types));
 $count = count($animal_types);
 
-$msg = <<<EOM
+    $msg = <<<EOM
 {$name}さんは
 {$animal}を
 {$count}匹飼っています。\n
