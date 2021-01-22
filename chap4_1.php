@@ -35,17 +35,17 @@ $top,$bottom,$height
 関数の結果を$areaに入れる
 メッセージ関数の呼び出し
 */
-require_once __DIR__."/chap4_area.php";
+require_once __DIR__ . "/chap4_area.php";
 $top = 10;
 $bottom = 20;
 $height = 30;
-$msg = calcArea($top,$bottom,$height);
+$msg = calcArea($top, $bottom, $height);
 echo $msg;
 
 $top = 40;
 $bottom = 50;
 $height = 60;
-$msg = calcArea($top,$bottom,$height);
+$msg = calcArea($top, $bottom, $height);
 echo $msg;
 
 // docker-compose exec app bash

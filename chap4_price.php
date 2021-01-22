@@ -13,15 +13,15 @@ var_dump("ハロー！");
 このとき 小数点以下は切り捨て。 小数点以下を切り捨てるには floor関数 を使用。
 
 */
-function add($item1,$item2,$item3){
+function add($item1, $item2, $item3) {
     return $item1 + $item2 + $item3;
 }
 
-function totalTax($sum){
+function totalTax($sum) {
     return floor($sum * 1.1);
 }
 
-function displayMsg($name,$sum,$price){
+function displayMsg($name, $sum, $price) {
     $msg = <<<EOM
 {$name}様
 ご注文承りました。

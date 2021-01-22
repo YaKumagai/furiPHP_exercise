@@ -12,11 +12,11 @@ $owner の中は 多次元配列になっています。配列の中の要素を
 count関数 を使用し、ペットの数をカウントした結果を入れる。
 変数名 : $msg で上記の変数を利用し、 実行結果と同じメッセージを出力。
 */
-function displayMsg($owner){
+function displayMsg($owner) {
 
 $name = $owner["name"];
 $animal_types = $owner["animal"];
-$animal = implode('、',array_unique($animal_types));
+$animal = implode('、', array_unique($animal_types));
 $count = count($animal_types);
 
 $msg = <<<EOM

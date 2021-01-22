@@ -22,10 +22,9 @@ string(18) "7 は 奇数です"
 
 var_dump("数字を入力して下さい");
 $num = trim(fgets(STDIN));
-$nums = $num % 2;
-if($nums === 1){
+if ($num % 2 === 1) {
     var_dump($num . " は、奇数です");
-}else{
+} else {
     var_dump($num . " は、偶数です");
 }
 

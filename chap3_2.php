@@ -9,10 +9,10 @@
 
 プログラムの実行はターミナルから行ってください。
 */
-foreach(range(1,100) as $cnt){
-    if($cnt % 3 === 0){
+foreach (range(1, 100) as $cnt) {
+    if ($cnt % 3 === 0) {
         echo "アホ ";
-    }else{
+    } else {
         echo $cnt . " ";
     }
 }

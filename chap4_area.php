@@ -32,7 +32,7 @@ $height = 60;
 関数の結果を$areaに入れる
 メッセージ関数の呼び出し
 */
-function calcArea($tops,$bottoms,$heights){
+function calcArea($tops, $bottoms, $heights) {
     $areas = ($tops + $bottoms) * $heights / 2;
     $msg = <<<EOM
 \n台形のサイズ
