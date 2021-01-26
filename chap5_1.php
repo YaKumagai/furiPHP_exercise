@@ -57,9 +57,7 @@ function constellation($month, $day) {
         ["name" => "水瓶座", "period_start" => [1, 20], "period_end" => [2, 18]],
         ["name" => "魚座", "period_start" => [2, 19], "period_end" => [3, 20]]
     ];
-
     foreach ($signs as $sign) {
-        $name = "山羊座";
         $name = $sign["name"];
         $period_start = $sign["period_start"];
             $start_m = $period_start[0];
@@ -67,19 +65,12 @@ function constellation($month, $day) {
         $period_end = $sign["period_end"];
             $end_m = $period_end[0];
             $end_d = $period_end[1];
-
-        $month_day = strtotime(date('Y') . '-' . h($month) . '-' . h($day));
-        $start_md = strtotime(date('Y') . '-' . $start_m . '-' .  $start_d);
-        $end_md = strtotime(date('Y') . '-' . $end_m . '-' . $end_d);
-
-        if ($month_day >= $start_md && $month_day <= $end_md) {
+        if ($month == $start_m && $day >= $start_d) {
             return $name;
             break;
-        } else {
-            if ($name == '山羊座' && $month == 12 ){
-                return $name;
-                break;
-            }
+        }elseif($month == $end_m && $day <= $end_d) {
+            return $name;
+            break;
         }
     }
 }
@@ -111,14 +102,7 @@ $day = filter_input(INPUT_GET, "day", FILTER_VALIDATE_INT);
         <input type="submit" value="OK">
     </form>
     <?php else: ?>
-        <?php if(checkdate(h($month), h($day), date("Y"))) {
-            $sign = constellation($month, $day);
-        } else {
-            $month = "**";
-            $day = "**";
-            $sign = "＊＊座";
-        }
-        ?>
+        <?php $sign = constellation($month, $day); ?>
         <p><?= h($month) ?>月<?= h($day) ?>日生まれは<?= $sign ?>です。</p>
     <?php endif; ?>
 </body>
