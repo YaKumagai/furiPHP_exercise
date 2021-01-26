@@ -38,9 +38,6 @@ method属性 = get
 OKボタン : type属性 = submit、value属性 = OK
 変数名 : $month と $day が空ではない場合、星座をチェックして以下表示。
 「** 月 ** 日生まれは ***座 です。」
-
-
-
 */
 
 $signs = [
@@ -59,9 +56,72 @@ $signs = [
         ["name" => "魚座", "period_start" => [2, 19], "period_end" => [3, 20]]
 ];
 
-/*
+function constellation($sign, $month, $day) {
+
+    $name = $sign["name"];
+    $period_start = $sign["period_start"];
+        $start_m = $period_start[0];
+        $start_d = $period_start[1];
+    $period_end = $sign["period_end"];
+        $end_m = $period_end[0];
+        $end_d = $period_end[1];
+
+    $month_day = strtotime(date('Y') . '-' . h($month) . '-' . h($day));
+    $start_md = strtotime(date('Y') . '-' . $start_m . '-' .  $start_d);
+    $end_md = strtotime(date('Y') . '-' . $end_m . '-' . $end_d);
+
+    if ($month_day >= $start_md && $month_day <= $end_md) {
+        return $name;
+    } else {
+    }
+}
+
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
+}
+
+$month = filter_input(INPUT_GET, "month", FILTER_VALIDATE_INT);
+$day = filter_input(INPUT_GET, "day", FILTER_VALIDATE_INT);
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星座チェック</title>
+</head>
+<body>
+    <h1>星座チェック</h1>
+    <?php if (empty($month) && empty($day)): ?>
+    <p>月日を入力してください。</p>
+    <form method="get">
+        <input name="month" type="number" min="1" max="12" value="<?= h((int)date("m")) ?>">
+        <label>月</label>
+        <input name="day" type="number" min="1" max="31" value="<?= h((int)date("d")) ?>">
+        <label>日</label>
+        <input type="submit" value="OK">
+    </form>
+    <?php else: ?>
+        <?php if(checkdate(h($month), h($day), date("Y"))) {
+            foreach ($signs as $sign) {
+                $sign = constellation($sign, $month, $day);
+                if (isset($sign)):
+                    break;
+                endif;
+            }
+        } else {
+            $month = "**";
+            $day = "**";
+            $sign = "＊＊座";
+        }
+        ?>
+        <p><?= h($month) ?>月<?= h($day) ?>日生まれは<?= $sign ?>です。</p>
+    <?php endif; ?>
+</body>
+
+<!-- 
 実行
 プログラムの実行は dockerを立ち上げて Webブラウザ から行って下さい。
-
-Google Chrome のアドレスバーにhttp://localhost/furiPHP_exercise/chap5_1.phpと入力します。
-*/
+http://localhost/furiPHP_exercise/chap5_1.php
+-->

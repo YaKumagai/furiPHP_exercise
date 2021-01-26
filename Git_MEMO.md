@@ -1,4 +1,4 @@
-# aaaaaa
+# カリキュラム
 
 ## Chapter1 課題1 : 変数を使って講師の名前を出力してみよう
 
@@ -63,5 +63,5 @@
 - git checkout chapter3
 - git checkout chapter4
 - git checkout chapter5
-- git commit -m "2021年1月24日 commit"
+- git commit -m "2021年1月26日 commit"
 - git add .
