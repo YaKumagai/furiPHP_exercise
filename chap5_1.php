@@ -58,19 +58,14 @@ function constellation($month, $day) {
         ["name" => "魚座", "period_start" => [2, 19], "period_end" => [3, 20]]
     ];
     foreach ($signs as $sign) {
-        $name = $sign["name"];
         $period_start = $sign["period_start"];
-            $start_m = $period_start[0];
-            $start_d = $period_start[1];
+        $start_m = $period_start[0];
+        $start_d = $period_start[1];
         $period_end = $sign["period_end"];
-            $end_m = $period_end[0];
-            $end_d = $period_end[1];
-        if ($month == $start_m && $day >= $start_d) {
-            return $name;
-            break;
-        }elseif($month == $end_m && $day <= $end_d) {
-            return $name;
-            break;
+        $end_m = $period_end[0];
+        $end_d = $period_end[1];
+        if (($month == $start_m && $day >= $start_d) || ($month == $end_m && $day <= $end_d)) {
+            return $sign["name"];
         }
     }
 }
